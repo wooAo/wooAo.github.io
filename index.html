@@ -41,11 +41,11 @@
             <h3>优融三维视觉采集与空间理解系统</h3>
             <div class="project-body full">
               <div>
-                <p>占位：DA3主链路、MASt3R失败兜底、点云主平面拟合、Homography、真实尺寸恢复。</p>
+                <p>丝融二维货架视觉系统已能支撑大规模采集，但在高货架、窄通道、地堆等场景中仍受物理空间、视角覆盖和尺度恢复限制。优融将系统升级为零售空间数字化视觉系统，不只输出货架拼图，还恢复三维结构和真实尺寸。</p>
                 <ul>
-                  <li>待补充：高货架、窄通道、地堆等复杂采集场景的业务背景。</li>
-                  <li>待补充：metric scale相机位姿、点云主平面拟合和宽度测量流程图。</li>
-                  <li>待补充：上线规模、测量误差和核心业务指标结果。</li>
+                  <li>作为项目Owner负责技术路线选择、模型评估、推理部署、数据Pipeline、采集策略、三维几何后处理和尺寸恢复。</li>
+                  <li>采用Depth Anything 3主链路 + MASt3R失败兜底，利用metric scale相机位姿和点云拟合货架主平面，结合相机内外参求解Homography并生成拼图。</li>
+                  <li>2026年7月底在中国CNPG国内产线全量上线，单月约1万次货架采集拼接任务；货架宽度平均测量误差≤5%，核心业务指标相比丝融提升约1-2个百分点。</li>
                 </ul>
               </div>
             </div>
@@ -56,18 +56,17 @@
             <h3>丝融零售货架视觉采集SDK</h3>
             <div class="project-body">
               <div>
-                <p>占位：App端视频采集、关键帧抽取、SuperPoint/LightGlue、云端重拼、QC闭环。</p>
+                <p>面向大规模零售货架采集场景，将目标从“能拼出图”升级为“可支撑下游识别与陈列计算的稳定视觉采集SDK”，覆盖端侧采集、特征匹配、云端重拼、质量评估和失败数据闭环。</p>
                 <ul>
-                  <li>待补充：端侧采集、端侧拼接、云端重拼的系统架构图。</li>
-                  <li>待补充：设备适配、曝光兜底、失败样本回流和质量指标设计。</li>
-                  <li>待补充：月均采集任务、QC通过率和访店时间指标。</li>
+                  <li>设计App端视频采集、同步关键帧抽取、子线程端侧拼接、拼接状态回调和云端重拼架构。</li>
+                  <li>采用SuperPoint替代SIFT、LightGlue替代暴力匹配，结合全局检索、局部匹配、基础矩阵外点过滤与Homography求解，提升重复纹理场景匹配鲁棒性。</li>
+                  <li>支撑美国、加拿大、中国市场长期运行，月均10万+货架采集拼接任务；全年QC通过率提升约10%，访店时间降低约10%。</li>
                 </ul>
               </div>
               <div>
-                <div class="media-frame">
+                <div class="media-frame portrait">
                   <video controls preload="metadata" src="assets/videos/丝融拍摄demo.mov"></video>
                 </div>
-                <div class="note">展示结果占位：丝融货架采集拍摄Demo。</div>
               </div>
             </div>
           </article>
@@ -77,18 +76,17 @@
             <h3>Kiwi风电叶片内检机器人视觉采集系统</h3>
             <div class="project-body">
               <div>
-                <p>占位：ROS2节点、多相机、多闪光灯、舵机协同、覆盖率建模和现场可靠性。</p>
+                <p>面向风电叶片内腔狭窄、暗光、光照不可控的现场环境，将拍摄问题抽象为覆盖率、图像质量、设备协同和现场稳定性的系统工程问题，选择半画幅相机、闪光灯、舵机和ROS2软件触发方案。</p>
                 <ul>
-                  <li>待补充：camera driver/controller、servo driver/controller 节点结构。</li>
-                  <li>待补充：双相机分工、舵机角度、小车速度和覆盖率计算。</li>
-                  <li>待补充：现场预览、后台拼接校验、补拍/重拍兜底流程。</li>
+                  <li>负责camera driver/controller、servo driver/controller等ROS2节点，相机通过热靴触发闪光灯，拍照成功回调触发下一次舵机动作。</li>
+                  <li>基于叶片内腔四面结构设计双相机分工，并根据叶片结构参数、相机FOV和圆锥体几何假设计算拍摄间隔、舵机角度和小车速度。</li>
+                  <li>现场参与90台风机实操交付，单风机约3小时、2000+图片；系统量产约百台，并交付第三方独立操作。</li>
                 </ul>
               </div>
               <div>
-                <div class="media-frame">
+                <div class="media-frame wide">
                   <video controls preload="metadata" src="assets/videos/kiwi_merged_16x9.mp4"></video>
                 </div>
-                <div class="note">展示结果占位：Kiwi机器人视觉采集现场片段。</div>
               </div>
             </div>
           </article>

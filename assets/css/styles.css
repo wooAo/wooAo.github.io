@@ -129,10 +129,20 @@ h1 {
   background: #0f172a;
 }
 
+.media-frame.portrait {
+  max-width: 230px;
+  margin: 0 auto;
+}
+
+.media-frame.wide {
+  width: 100%;
+}
+
 .media-frame video {
   display: block;
   width: 100%;
-  max-height: 420px;
+  height: auto;
+  max-height: 460px;
   background: #0f172a;
 }
 
